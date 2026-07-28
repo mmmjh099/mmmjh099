@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudBase 平台验证</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 24px;
+      padding: 56px 48px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      max-width: 520px;
+    }
+    .check {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #00d97e;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 44px;
+      box-shadow: 0 8px 24px rgba(0, 217, 126, 0.5);
+    }
+    h1 { font-size: 28px; margin-bottom: 12px; font-weight: 600; }
+    p { font-size: 15px; opacity: 0.92; line-height: 1.7; }
+    .meta {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 13px;
+      opacity: 0.78;
+    }
+    .time { font-family: "SF Mono", Menlo, monospace; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>CloudBase 平台验证成功</h1>
+    <p>
+      如果你在国内网络（无需 VPN）能看到这个页面，<br>
+      说明腾讯云 CloudBase 静态托管完全可用。
+    </p>
+    <div class="meta">
+      这是一个占位验证页面。<br>
+      等真正的 Web 产物到位后，直接覆盖上传即可。<br>
+      <span class="time">部署时间：<span id="t"></span></span>
+    </div>
+  </div>
+  <script>
+    document.getElementById('t').textContent = new Date().toLocaleString('zh-CN', { hour12: false });
+  </script>
+</body>
+</html>
